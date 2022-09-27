@@ -1,0 +1,204 @@
+/*=============== GOOGLE FONTS ===============*/
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&family=Poppins:wght@400;500;600;700;800;900&display=swap');
+
+@font-face {
+    font-family: Visby;
+    src: url(./assets/visbycf-font);
+}
+
+/*=============== MEDIA QUERIES ===============*/
+
+/*========== Tablet ==========*/
+@media screen and (min-width: 768px) {
+}
+
+/*========== Desktop ==========*/
+@media screen and (min-width: 1200px) {
+}
+
+/*=============== GLOBAL TAGS AND CLASSES ===============*/
+
+:root {
+  /*========== Primary colors ==========*/
+  --hue: 200;
+  --blue: hsl(var(--hue), 100%, 50%);
+  --purple: hsl(calc(var(--hue) + 81), 100%, 37%);
+  --white-cream: #F2F5FB;
+  --white-cream-02: #EAEEF7;
+  --black: #121214;
+  --gray: #8C8C8C;
+
+  /*========== Text colors ==========*/
+  --dark-texts: #22343D;
+  --light-texts: hsla(200, 28%, 19%, 0.4); 
+
+  /*========== Font and typography ==========*/
+  --body-font: "DM Sans", sans-serif;
+  --font-headline: "Visby CF", sans-serif;
+  --font-paragraph: Nunito, sans-serif;
+  --font-secondary: Poppins, sans-serif;
+
+  font-size: 62.5%; /* de 16 pra 10 pixels */
+
+  /*========== Border-radius ==========*/
+  --border-1: 0.1rem;
+  --border-2: 0.2rem;
+  --border-25: 0.25rem;
+  --border-5: 0.5rem;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  border: 0;
+  appearance: none;
+  text-decoration: none;
+  overflow-x: hidden;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  font-family: sans-serif;
+  font-size: 1.6rem; /* 10px * 1.6 = 16px padrão */
+
+  text-align: center;
+
+  background: var(--white-cream);
+}
+
+.wrapper {
+  width: min(50rem, 100%);
+  margin-inline: auto;
+  padding-inline: 2.4rem;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  width: 100%;
+}
+
+a,
+button {
+  text-decoration: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+h1 {
+    font-family: Visby, sans-serif;
+}
+
+/*=============== #HOME ===============*/
+
+#home {
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 31.87%, #000000 61.86%), url(./assets/main-background-mobile.png);
+  background-repeat: no-repeat;
+  background-position-x: center;
+  background-size: cover;
+}
+
+#home .wrapper {
+
+}
+
+#home .wrapper .play-button {
+margin-top: 15rem;
+}
+
+#home .wrapper .play-button svg {
+width: 39.25vw;
+max-width: 30rem;
+max-height: 30rem;
+}
+
+#home .wrapper .content {
+
+}
+
+#home .wrapper .content .logo {
+  position:absolute;
+  top: 2.4rem;
+}
+
+#home .wrapper .content .logo svg {
+  width: 9rem;
+  height: fit-content;
+}
+
+#home .wrapper .content h1 {
+  font-family: var(--font-headline);
+  color: white;
+  font-size: 2.6rem;
+  font-weight: 900;
+}
+
+#home .wrapper .content h1 span {
+  background-image: linear-gradient(270deg, #00AAFF 37.75%, #A221DF 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+#home .wrapper .content p {
+  font-family: var(--font-paragraph);
+  color: white;
+  font-size: 1.4.rem;
+
+  margin-top: 1rem;
+}
+
+#home .wrapper .content .button {
+  width: fit-content;
+  margin-top: 5rem;
+  display: inline-block;
+  padding: 1.6rem 3.2rem;
+  background: linear-gradient(268.11deg, #00AAFF 0%, #580082 100%);
+  border-radius: 0.8rem;
+
+  font-family: var(--font-secondary);
+  color: white;
+  font-weight: 700;
+}
+
+#home .wrapper .content .hotmart-safe {
+margin-top: 1rem;
+margin-bottom: 5rem;
+display: flex;
+align-items: center;
+justify-content: center;
+gap: 1rem;
+}
+
+#home .wrapper .content .hotmart-safe .img {
+  width: 9rem;
+}
+
+#home .wrapper .content .hotmart-safe .line {
+  width: 1px;
+  height: 2rem;
+  background: var(--gray);
+}
+
+#home .wrapper .content .hotmart-safe p {
+  font-family: var(--font-paragraph);
+  font-size: 1.2rem;
+  color: var(--gray);
+  margin-top: 0;
+}
+
+/*=============== #SEGREDOS-OCULTOS ===============*/
