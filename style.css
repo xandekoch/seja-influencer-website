@@ -41,10 +41,14 @@
   font-size: 62.5%; /* de 16 pra 10 pixels */
 
   /*========== Border-radius ==========*/
-  --border-1: 0.1rem;
-  --border-2: 0.2rem;
-  --border-25: 0.25rem;
-  --border-5: 0.5rem;
+  --border-1: 1rem;
+  --border-2: 2rem;
+  --border-25: 2.5rem;
+  --border-5: 5rem;
+
+  /*========== Faixa-y-space ==========*/
+  --faixa-space: -8rem;
+  --color-bg: hsl(0, 0%, 100%);
 }
 
 * {
@@ -78,7 +82,7 @@ body {
 }
 
 .wrapper {
-  width: min(50rem, 100%);
+  width: min(60rem, 100%);
   margin-inline: auto;
   padding-inline: 2.4rem;
 }
@@ -103,25 +107,66 @@ h1 {
     font-family: Visby, sans-serif;
 }
 
+.button {
+  width: fit-content;
+  display: inline-block;
+  padding: 1.6rem 2.4rem;
+  background: linear-gradient(268.11deg, #00AAFF 0%, #580082 100%);
+  border-radius: 0.8rem;
+
+  font-family: var(--font-secondary);
+  color: white;
+  font-weight: 700;
+}
+
 /*=============== #HOME ===============*/
 
 #home {
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 31.87%, #000000 61.86%), url(./assets/main-background-mobile.png);
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 31.87%, rgba(0, 0, 0, 1) 61.86%);
   background-repeat: no-repeat;
   background-position-x: center;
   background-size: cover;
+  position: relative;
+}
+
+/* Para adicionar uma imagem de fundo e poder manipular sem interferir no grandiente preto do #home */
+#home::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* vai atrás dos elementos que estão no z: 0 padrão*/
+  background: url(./assets/main-background-mobile.png);
+  background-size: 190%;
+  background-repeat: no-repeat;
+  background-position-x: center;
+}
+
+/* Para ter um background preto e não bugar o before, caso o vw seja muito pequeno */
+#home::after { 
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -2; 
+  background: black;
 }
 
 #home .wrapper {
-
+  margin-bottom: 5rem;
 }
 
 #home .wrapper .play-button {
-margin-top: 15rem;
+margin-top: 25rem;
+display: inline-block;
 }
 
-#home .wrapper .play-button svg {
-width: 39.25vw;
+#home .wrapper .play-button img {
+width: 20rem;
 max-width: 30rem;
 max-height: 30rem;
 }
@@ -135,7 +180,7 @@ max-height: 30rem;
   top: 2.4rem;
 }
 
-#home .wrapper .content .logo svg {
+#home .wrapper .content .logo img {
   width: 9rem;
   height: fit-content;
 }
@@ -157,27 +202,17 @@ max-height: 30rem;
 #home .wrapper .content p {
   font-family: var(--font-paragraph);
   color: white;
-  font-size: 1.4.rem;
+  font-size: 1.4rem;
 
   margin-top: 1rem;
 }
 
 #home .wrapper .content .button {
-  width: fit-content;
   margin-top: 5rem;
-  display: inline-block;
-  padding: 1.6rem 3.2rem;
-  background: linear-gradient(268.11deg, #00AAFF 0%, #580082 100%);
-  border-radius: 0.8rem;
-
-  font-family: var(--font-secondary);
-  color: white;
-  font-weight: 700;
 }
 
 #home .wrapper .content .hotmart-safe {
 margin-top: 1rem;
-margin-bottom: 5rem;
 display: flex;
 align-items: center;
 justify-content: center;
@@ -201,4 +236,687 @@ gap: 1rem;
   margin-top: 0;
 }
 
+/*=============== .FAIXA ===============*/
+
+.faixa {
+  position: relative;
+  overflow: visible;
+  left: -1rem;
+  padding-block: 1rem;
+  padding-inline: 2rem;
+  transform: rotate(1.25deg);
+  z-index: 2;
+  width: 266rem;
+}
+
+.faixa .faixa-container {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.faixa::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 150vw;
+  height: 100%;
+  z-index: -1;
+  background: linear-gradient(89.87deg, #82007A 0.01%, #00AAFF 99.98%);
+}
+
+.faixa p {
+  font-family: var(--font-secondary);
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: white;
+}
+
+.faixa svg {
+  width: 2rem;
+  height: 2rem;
+}
+
 /*=============== #SEGREDOS-OCULTOS ===============*/
+
+#segredos-ocultos {
+  position: relative;
+  overflow-x: visible;
+  padding-bottom: 10rem;
+}
+
+#segredos-ocultos::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 120%;
+  background: url(./assets/fundo-roxo.png);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  z-index: -1;
+}
+
+#segredos-ocultos .wrapper {
+  margin-top: 5rem;
+}
+
+#segredos-ocultos .head {
+  
+}
+
+#segredos-ocultos .head .img{
+
+}
+
+#segredos-ocultos .head h2 {
+  font-family: var(--font-secondary);
+  color: white;
+  font-size: 2.4rem;
+}
+
+#segredos-ocultos .cards {
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+
+  margin-top: 7rem;
+}
+
+#segredos-ocultos .cards .card{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2.5rem;
+}
+
+#segredos-ocultos .cards .card img {
+  width: 4.5rem;
+  height: auto;
+  min-width: 4.5rem;
+  min-height: 4.5rem;
+}
+
+#segredos-ocultos .cards .card p {
+  display: inline-block;
+  font-family: var(--font-paragraph);
+  font-weight: 400;
+  font-size: 1.6rem;
+  color: white;
+  text-align: left;
+}
+
+#segredos-ocultos .cards .card p span {
+  font-weight: 800;
+}
+
+#segredos-ocultos .button {
+  margin-top: 7rem;
+}
+
+/*=============== #INFLUENCIA-PROFISSAO ===============*/
+
+#influencia-profissao {
+  position: relative;
+  z-index: -3;
+  background: var(--white-cream);
+  overflow-x: visible;
+}
+
+#influencia-profissao h5 {
+  font-family: var(--font-secondary);
+  font-size: 3rem;
+  font-weight: 800;
+  white-space: nowrap;
+  overflow: hidden;
+  color: var(--gray);
+  opacity: 0.1;
+  position: absolute;
+  top: -6rem;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-inline: auto;
+  line-height: 4.4rem;
+}
+
+#influencia-profissao h5 span {
+  font-size: 3.8rem;
+}
+
+#influencia-profissao .wrapper {
+  margin-top: 5rem;
+  padding-bottom: 8rem;
+}
+
+#influencia-profissao .head {
+
+}
+
+#influencia-profissao .head h2 {
+  font-family: var(--font-headline);
+  font-size: 3rem;
+  color: var(--dark-texts);
+}
+
+#influencia-profissao .head p {
+  margin-top: 1rem;
+}
+
+#influencia-profissao  p {
+  font-family: var(--font-paragraph);
+  color: var(--dark-texts);
+}
+
+#influencia-profissao  p span {
+  font-weight: 700;
+}
+
+#influencia-profissao .content {
+  width: 80%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+
+  margin-top: 5rem;
+}
+
+#influencia-profissao .content .texts-1,
+#influencia-profissao .content .texts-2 {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+#influencia-profissao .content .texts-2 p:last-child {
+  font-family: var(--font-paragraph);
+  color: var(--dark-texts);
+  font-weight: 700;
+}
+
+#influencia-profissao .content .line {
+  width: 100%;
+  height: 3px;
+  border-radius: 100rem;
+  margin: auto;
+  background: linear-gradient(268.11deg, #00AAFF 0%, #580082 100%);
+}
+
+/*=============== #CELEBRIDADE-DIGITAL ===============*/
+
+#celebridade-digital {
+  position: relative;
+  overflow-x: visible;
+  padding-bottom: 10rem;
+  z-index: -4;
+}
+
+#celebridade-digital::before {
+  content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 120%;
+    background: url(./assets/celebridade-digital-background-mobile.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    z-index: -1;
+}
+
+#celebridade-digital .wrapper {
+  margin-top: 5rem;
+}
+
+#celebridade-digital .head {
+
+}
+
+#celebridade-digital .head h2 {
+  font-family: var(--font-headline);
+  font-size: 3rem;
+  color: var(--white-cream);
+}
+
+#celebridade-digital .head p {
+  font-family: var(--font-paragraph);
+  color: var(--white-cream);
+  margin-top: 1rem;
+}
+
+#celebridade-digital .head p span {
+  font-weight: 800;
+}
+
+#celebridade-digital .cards {
+  margin-top: 4rem;
+  
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4rem;
+}
+
+#celebridade-digital .card {
+  text-align: left;
+  height: 12rem;
+  padding: 1.2rem 2rem;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+
+  background: 
+    linear-gradient(var(--color-bg), var(--color-bg)) padding-box,
+    linear-gradient(to right, var(--purple), var(--blue)) border-box;
+  border-radius: 2rem;
+  border-bottom: 0.7rem solid transparent;
+}
+
+#celebridade-digital .card img {
+  width: 4.5rem;
+  height: auto;
+  min-width: 4.5rem;
+  min-height: 4.5rem;
+}
+
+#celebridade-digital .card p {
+  font-family: var(--font-paragraph);
+  font-size: 1.6rem;
+  color: var(--black);
+}
+
+/*=============== #MERCADO-ESPERANDO ===============*/
+
+#mercado-esperando {
+  background: var(--white-cream);
+  position: relative;
+  overflow-x: visible;
+  z-index: -5;
+}
+
+#mercado-esperando h5 {
+  font-family: var(--font-secondary);
+  font-size: 3rem;
+  font-weight: 800;
+  white-space: nowrap;
+  overflow: hidden;
+  color: var(--gray);
+  opacity: 0.1;
+  position: absolute;
+  top: -6rem;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-inline: auto;
+  line-height: 4.4rem;
+}
+
+#mercado-esperando h5 span {
+  font-size: 3.8rem;
+}
+
+#mercado-esperando .wrapper {
+  margin-top: 5rem;
+  padding-bottom: 8rem;
+}
+
+#mercado-esperando .head {
+
+}
+
+#mercado-esperando .head h2 {
+  font-family: var(--font-headline);
+  font-size: 3rem;
+  color: var(--dark-texts);
+}
+
+#mercado-esperando .head p {
+  margin-top: 1rem;
+
+  font-family: var(--font-paragraph);
+  font-weight: 700;
+  color: var(--dark-texts);
+  opacity: 0.4;
+}
+
+#mercado-esperando .cards {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+
+  margin-top: 5rem;
+}
+
+#mercado-esperando .card {
+  text-align: left;
+  background: white;
+  padding: 1.2rem 2rem;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+
+  background: 
+    linear-gradient(var(--color-bg), var(--color-bg)) padding-box,
+    linear-gradient(to right, var(--purple), var(--blue)) border-box;
+  border-radius: 2rem;
+  border-bottom: 0.7rem solid transparent;
+}
+
+#mercado-esperando .card p {
+  font-family: var(--font-paragraph);
+  font-size: 1.4rem;
+  color: var(--dark-texts);
+}
+
+#mercado-esperando .card img {
+  width: 4.5rem;
+  height: auto;
+  min-width: 4.5rem;
+  min-height: 4.5rem;
+}
+
+/*=============== #SEJA-INFLUENCER ===============*/
+
+#seja-influencer {
+  background: var(--white-cream);
+  position: relative;
+  overflow-x: visible;
+  z-index: -9;
+}
+
+#seja-influencer::before {
+  content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 120%;
+    background: url(./assets/seja-influencer-background-mobile.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    z-index: -1;
+}
+
+#seja-influencer .wrapper {
+  margin-top: 5rem;
+  padding-bottom: 7rem;
+}
+
+#seja-influencer .head {
+
+}
+
+#seja-influencer .head h2 {
+  font-family: var(--font-headline);
+  font-size: 3rem;
+  color: var(--white-cream);
+}
+
+#seja-influencer .head h3 {
+  font-family: var(--font-paragraph);
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: var(--white-cream);
+  margin-top: 1rem;
+}
+
+#seja-influencer .head h3 span {
+  font-weight: 800;
+}
+
+#seja-influencer .cards {
+  margin-top: 5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 6rem;
+}
+
+#seja-influencer .card {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 2rem;
+}
+
+#seja-influencer .card:nth-child(2) {
+  flex-direction: row-reverse;
+}
+
+#seja-influencer .card img {
+  width: 10rem;
+  height: auto;
+  min-width: 10rem;
+  min-height: 10rem;
+}
+
+#seja-influencer .card p {
+  font-family: var(--font-paragraph);
+  color: var(--white-cream);
+  font-size: 1.4rem;
+}
+
+#seja-influencer .card p span {
+  font-weight: 900;
+  background: linear-gradient(268.9deg, #00AAFF 0%, #8200BF 98.44%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/*=============== #MODULOS ===============*/
+
+#modulos {
+
+}
+
+#modulos .wrapper {
+
+}
+
+#modulos .wrapper h2 {
+  margin-top: 5rem;
+  font-family: var(--font-headline);
+  font-size: 3rem;
+  color: var(--dark-texts);
+
+}
+
+#modulos .mySwiper {
+  margin-top: 5rem;
+  width: min(60rem, 100%);
+  margin-inline: auto;
+  padding-inline: 2.4rem;
+  /* padding-left: 5rem; */
+}
+
+#modulos .swiper-wrapper {
+  overflow-x: visible;
+  padding-bottom: 5rem;
+}
+
+#modulos .mySwiper::before {
+  content: "";
+  display: none;
+  position: absolute;
+  pointer-events: none;
+  right: 0;
+  top: 0;
+  width: 100%;
+  margin-block: 5rem;
+  height: calc(100% - 10rem); /* 10rem é o padding bottom pro pagination e o margin top do cards*/
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0) 60%, rgba(0, 0, 0, 1) 90%);
+  background-repeat: no-repeat;
+  background-position-x: center;
+  background-size: cover;
+  z-index: 2;
+}
+
+#modulos .swiper-wrapper .arrow {
+  display: none;
+}
+
+#modulos .swiper-wrapper .swiper-slide {
+  border-radius: 1.5rem;
+  width: 25rem;
+  /* user-select: none; */
+
+  
+  background: linear-gradient(var(--color-bg), var(--color-bg)) padding-box, linear-gradient(to right, var(--purple), var(--blue)) border-box;
+  border-bottom: 0.5rem solid transparent;
+
+}
+
+#modulos .swiper-wrapper .swiper-slide img {
+  width: 100%;
+  display: block;
+}
+
+#modulos .swiper-wrapper .swiper-slide:hover {
+  box-shadow:  0 1rem 1rem rgba(0, 0, 0, 0.4);
+}
+
+#modulos .swiper-wrapper .swiper-pagination {
+  
+}
+
+/*=============== #SOBRE ===============*/
+
+#sobre {
+
+}
+
+#sobre .wrapper {
+  margin-top: 5rem;
+  margin-bottom: 7rem;
+}
+
+#sobre .wrapper .picture {
+
+}
+
+#sobre .wrapper .picture {
+
+}
+
+#sobre .wrapper .picture img {
+  max-width: 35rem;
+}
+
+#sobre .wrapper .texts {
+  margin-top: 2.5rem;
+}
+
+#sobre .wrapper .texts h3 {
+  font-family: var(--font-paragraph);
+  font-size: 1.4rem;
+  color: var(--dark-texts);
+  opacity: 0.4;
+}
+
+#sobre .wrapper .texts h2 {
+  font-family: var(--font-headline);
+  font-size: 3rem;
+  color: var(--dark-texts);
+  font-weight: 700;
+}
+
+#sobre .wrapper .texts p {
+  margin-top: 1rem;
+  font-family: var(--font-paragraph);
+  color: var(--dark-texts);
+}
+
+#sobre .mySwiper2 {
+  margin-top: 4rem;
+}
+
+#sobre .swiper-wrapper {
+  overflow-x: visible;
+}
+
+#sobre .swiper-wrapper .swiper-slide {
+  border-radius: 1.3rem;
+  width: 13rem;
+  user-select: none;
+}
+
+#sobre .swiper-wrapper .swiper-slide .views {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  margin: 0 0 .5rem .5rem;
+}
+
+#sobre .swiper-wrapper .swiper-slide .views svg {
+
+}
+
+#sobre .swiper-wrapper .swiper-slide .views span {
+  color: white;
+  font-weight: 600;
+  font-family: ProximaNova, Arial;
+}
+
+#sobre .swiper-wrapper .swiper-slide img {
+  width: 100%;
+  display: block;
+}
+
+/*=============== #RESULTADOS-ALUNOS ===============*/
+
+#resultados-alunos {
+  background: url(./assets/resultados-alunos-mobile-background.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#resultados-alunos .wrapper {
+  margin-top: 5rem;
+}
+
+#resultados-alunos .wrapper .head {
+
+}
+
+#resultados-alunos .wrapper .head h2 {
+  font-family: var(--font-headline);
+  font-size: 3rem;
+  color: white;
+}
+
+#resultados-alunos .wrapper .head h3 {
+  margin-top: 1.5rem;
+  margin-inline: auto;
+  width: 21rem;
+  font-family: var(--font-paragraph);
+  font-size: 1.4rem;
+  color: white;
+}
+
+#resultados-alunos .mySwiper3 {
+  margin-top: 4rem;
+  margin-bottom: 9rem;
+
+  width: min(60rem, 100%);
+    margin-inline: auto;
+    padding-inline: 2.4rem;
+}
+
+#resultados-alunos .swiper-wrapper {
+  overflow-x: visible;
+}
+
+#resultados-alunos .swiper-wrapper .swiper-slide {
+  border-radius: 1.5rem;
+  width: 25rem;
+  user-select: none;
+}
+
+#resultados-alunos .swiper-wrapper .swiper-slide img {
+  width: 100%;
+  display: block;
+}
