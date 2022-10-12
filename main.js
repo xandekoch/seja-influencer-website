@@ -57,22 +57,22 @@ function closeLightbox() {
 
 
 function playVideo() {
-    console.log('playVideo');
     let video = document.getElementById("video");
+    
     video.contentWindow.postMessage( '{"event":"command", "func":"playVideo", "args":""}', '*');
 }
 
 
 function pauseVideo() {
-    console.log('pauseVideo');
     let video = document.getElementById("video");
+
     video.contentWindow.postMessage( '{"event":"command", "func":"pauseVideo", "args":""}', '*');
 }
 
 
 function openCard(card) {
     classes = card.classList
-    console.log(classes)
+
     if ('opened' == card.classList[1]) {
     card.classList.remove("opened");
     }

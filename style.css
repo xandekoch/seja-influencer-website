@@ -63,7 +63,7 @@
 }
 
 html {
-  
+  /* overflow-x: visible; */
 }
 
 html,
@@ -71,6 +71,7 @@ body {
   position: relative;
   width: 100%;
   height: 100%;
+  overflow-y: visible;
   scroll-behavior: smooth;
   z-index: -2;
 }
@@ -263,7 +264,7 @@ body.video .lightbox {
   width: 100%;
   height: 100%;
   z-index: -1; /* vai atrás dos elementos que estão no z: 0 padrão*/
-  background: url(./assets/main-background-mobile.png);
+  background: url(./assets/backgrounds/main-background-mobile.png);
   background-size: 190%;
   background-repeat: no-repeat;
   background-position-x: center;
@@ -424,7 +425,7 @@ body.video .lightbox {
   bottom: 0;
   width: 100%;
   height: 120%;
-  background: url(./assets/segredos-ocultos-background-mobile.png);
+  background: url(./assets/backgrounds/segredos-ocultos-background-mobile.png);
   background-repeat: no-repeat;
   background-size: 100% 100%;
   z-index: -1;
@@ -599,7 +600,7 @@ body.video .lightbox {
   bottom: 0;
   width: 100%;
   height: 120%;
-  background: url(./assets/celebridade-digital-background-mobile.png);
+  background: url(./assets/backgrounds/celebridade-digital-background-mobile.png);
   background-repeat: no-repeat;
   background-size: 100% 100%;
   z-index: -1;
@@ -780,7 +781,7 @@ body.video .lightbox {
   bottom: 0;
   width: 100%;
   height: 120%;
-  background: url(./assets/seja-influencer-background-mobile.png);
+  background: url(./assets/backgrounds/seja-influencer-background-mobile.png);
   background-repeat: no-repeat;
   background-size: 100% 100%;
   z-index: -1;
@@ -1080,7 +1081,7 @@ body.video .lightbox {
 
 #resultados-alunos {
   position: relative;
-  background: url(./assets/resultados-alunos-mobile-background.png);
+  background: url(./assets/backgrounds/resultados-alunos-mobile-background.png);
   background-repeat: no-repeat;
   background-size: cover;
   z-index: 5;
@@ -1196,7 +1197,7 @@ body.video .lightbox {
   bottom: 0;
   width: 100%;
   height: 120%;
-  background: url(./assets/bonus-exclusivos-background-mobile.png);
+  background: url(./assets/backgrounds/bonus-exclusivos-background-mobile.png);
   background-repeat: no-repeat;
   background-size: 100% 100%;
   z-index: -1;
@@ -1314,7 +1315,7 @@ body.video .lightbox {
   width: 100%;
   height: 120%;
 
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0) 10%, #fff 80%), url(./assets/investimento-background-mobile.png);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0) 10%, #fff 80%), url(./assets/backgrounds/investimento-background-mobile.png);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
