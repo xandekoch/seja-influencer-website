@@ -18,22 +18,23 @@
     />
 </head>
 <body>
-    <div onclick="pauseVideo(); closeLightbox()" class="lightbox">
-        
-        <button onclick="pauseVideo(); closeLightbox()" id="pauseVideo" class="close-button">
+    <div onclick="pauseVideo(); closeLightbox();" class="lightbox">
+        <button onclick="pauseVideo(); closeLightbox();" id="pauseVideo" class="close-button">
             <svg style="fill: white;" xmlns="http://www.w3.org/2000/svg" height="40" width="40"><path d="m20 23.042-8 8q-.625.666-1.521.666-.896 0-1.521-.666-.666-.625-.666-1.521 0-.896.666-1.521l8-8-8-8q-.666-.625-.666-1.521 0-.896.666-1.521.625-.666 1.521-.666.896 0 1.521.666l8 8 8-8q.625-.666 1.521-.666.896 0 1.521.666.666.625.666 1.521 0 .896-.666 1.521l-8 8 8 8q.666.625.666 1.521 0 .896-.666 1.521-.625.666-1.521.666-.896 0-1.521-.666Z"/></svg>
         </button>
-        <iframe id="video" allowfullscreen="allowfullscreen" allowscriptaccess="always" width="420" height="315"
-            src="https://www.youtube.com/embed/rDJhowZ8EDc?enablejsapi=1">
+
+        <iframe id="video" class="ytb-video" allowfullscreen="allowfullscreen" allowscriptaccess="always" width="420" height="315"
+            src="https://www.youtube.com/embed/rDJhowZ8EDc?enablejsapi=1" modestbranding="0"  controls="0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
         </iframe>
-    
     </div>
 
     <section id="home">
+        <img class="square" src="./assets/square.png" alt="">
+
         <div class="wrapper">
-            <div id="playVideo" onclick="openLightbox(); playVideo()" class="play-button">
+            <button id="playVideo" onclick="openLightbox(); playVideo();" class="play-button">
                 <img src="./assets/play-button.png" alt="">                 
-            </div>
+            </button>
 
             <div class="content">
                 <div class="logo">
@@ -54,10 +55,6 @@
                     <p>Compra 100% segura</p>
                 </div>
             </div>
-
-            <a href="https://api.whatsapp.com/send?phone=5521998376234&text=Ol%C3%A1,%20Estou%20doido(a)%20pra%20comprar%20o%20SEJA%20INFLUENCER,%20mas%20tenho%20algumas%20d%C3%BAvidas.%20Se%20voc%C3%AA%20me%20atender%20bem%20e%20r%C3%A1pido%20eu%20compro." target="_blank" class="wpp">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="#fff" d="M3.516 3.516c4.686-4.686 12.284-4.686 16.97 0 4.686 4.686 4.686 12.283 0 16.97a12.004 12.004 0 0 1-13.754 2.299l-5.814.735a.392.392 0 0 1-.438-.44l.748-5.788A12.002 12.002 0 0 1 3.517 3.517zm3.61 17.043.3.158a9.846 9.846 0 0 0 11.534-1.758c3.843-3.843 3.843-10.074 0-13.918-3.843-3.843-10.075-3.843-13.918 0a9.846 9.846 0 0 0-1.747 11.554l.16.303-.51 3.942a.196.196 0 0 0 .219.22l3.961-.501zm6.534-7.003-.933 1.164a9.843 9.843 0 0 1-3.497-3.495l1.166-.933a.792.792 0 0 0 .23-.94L9.561 6.96a.793.793 0 0 0-.924-.445 1291.6 1291.6 0 0 0-2.023.524.797.797 0 0 0-.588.88 11.754 11.754 0 0 0 10.005 10.005.797.797 0 0 0 .88-.587l.525-2.023a.793.793 0 0 0-.445-.923L14.6 13.327a.792.792 0 0 0-.94.23z"/></svg>
-            </a>
         </div>
     </section>
 
@@ -486,6 +483,7 @@
     </div>
 
     <section id="celebridade-digital">
+        <img class="square" src="./assets/square.png" alt="">
         <div class="wrapper">
             <div class="head">
                 <h2>Destrave já seu status de celebridade digital</h2>
@@ -750,6 +748,7 @@
     </div>
 
     <section id="seja-influencer">
+        <img class="square" src="./assets/square.png" alt="">
         <div class="wrapper">
             <div class="head">
                 <h2>Seja um Influencer</h2>
@@ -807,6 +806,7 @@
     </section>
 
     <section id="sobre">
+        <img class="square" src="./assets/square.png" alt="">
         <div class="wrapper">
             <div class="picture">
                 <img src="./assets/gabi-foto-sobre.png" alt="foto-da-gabi-miazzi" aria-label="Foto da Gabi Miazzi com a mão no óculos acima da cabeça">
@@ -851,11 +851,16 @@
                     </div>
                     <img src="./assets/video-thumbs/video1.jfif" alt=""></a>
             </div>
+            <div class="buttons">
+                <div class="swiper-button-next"><img src="./assets/icons/angle-right-black.png" alt=""></div>
+                <div class="swiper-button-prev"><img src="./assets/icons/angle-right-black.png" alt=""></div>
+            </div>
         </div>
         </div>
     </section>
 
     <section id="resultados-alunos">
+        <img class="square" src="./assets/square.png" alt="">
         <div class="wrapper">
             <div class="head">
                 <h2>Quem fez, Aprova!</h2>
@@ -1526,6 +1531,10 @@
             <p>Copyright © 2022 Inc. Todos os direitos reservados.<br>TAR Media CNPJ: 47.763.712/0001-26</p>
         </div>
     </footer>
+
+    <a class="wpp" href="https://api.whatsapp.com/send?phone=5521998376234&text=Ol%C3%A1,%20Estou%20doido(a)%20pra%20comprar%20o%20SEJA%20INFLUENCER,%20mas%20tenho%20algumas%20d%C3%BAvidas.%20Se%20voc%C3%AA%20me%20atender%20bem%20e%20r%C3%A1pido%20eu%20compro." target="_blank">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="#fff" d="M3.516 3.516c4.686-4.686 12.284-4.686 16.97 0 4.686 4.686 4.686 12.283 0 16.97a12.004 12.004 0 0 1-13.754 2.299l-5.814.735a.392.392 0 0 1-.438-.44l.748-5.788A12.002 12.002 0 0 1 3.517 3.517zm3.61 17.043.3.158a9.846 9.846 0 0 0 11.534-1.758c3.843-3.843 3.843-10.074 0-13.918-3.843-3.843-10.075-3.843-13.918 0a9.846 9.846 0 0 0-1.747 11.554l.16.303-.51 3.942a.196.196 0 0 0 .219.22l3.961-.501zm6.534-7.003-.933 1.164a9.843 9.843 0 0 1-3.497-3.495l1.166-.933a.792.792 0 0 0 .23-.94L9.561 6.96a.793.793 0 0 0-.924-.445 1291.6 1291.6 0 0 0-2.023.524.797.797 0 0 0-.588.88 11.754 11.754 0 0 0 10.005 10.005.797.797 0 0 0 .88-.587l.525-2.023a.793.793 0 0 0-.445-.923L14.6 13.327a.792.792 0 0 0-.94.23z"/></svg>
+    </a>
 
     <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
     <script src="./main.js"></script>
