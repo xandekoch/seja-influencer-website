@@ -13,16 +13,6 @@
     url(./assets/visbycf-font/visbycf-heavy.otf);
 }
 
-/*=============== MEDIA QUERIES ===============*/
-
-/*========== Tablet ==========*/
-@media screen and (min-width: 768px) {
-}
-
-/*========== Desktop ==========*/
-@media screen and (min-width: 1200px) {
-}
-
 /*=============== GLOBAL TAGS AND CLASSES ===============*/
 
 :root {
@@ -230,8 +220,8 @@ body.video .lightbox {
   transform: translateY(-50%);
   width: 90vw;
   height: 50.63vw;
-  max-width: 920px;
-  max-height: 690px;
+  max-width: 1200px;
+  max-height: 675px;
   position: relative;
   z-index: 2;
 }
@@ -251,10 +241,10 @@ body.video .lightbox {
   display: none;
   position: absolute;
   z-index: 0;
-  bottom: 5rem;
-  left: -14rem;
+  bottom: -7rem;
+  left: -5rem;
   filter: blur(20px);
-  transform: rotate(60deg);
+  transform: rotate(-15deg);
   width: 20rem;
 }
 
@@ -267,7 +257,7 @@ body.video .lightbox {
   width: 100%;
   height: 100%;
   z-index: 0; /* vai atrás dos elementos que estão no z: 0 padrão*/
-  background: url(./assets/backgrounds/main-background-mobile.png);
+  background: url(./assets/backgrounds/main-background-mobile.jpg);
   background-size: 190%;
   background-repeat: no-repeat;
   background-position-x: center;
@@ -344,7 +334,6 @@ body.video .lightbox {
 }
 
 #home .wrapper .content .button {
-  margin-top: 5rem;
 }
 
 #home .wrapper .content .hotmart-safe {
@@ -734,15 +723,20 @@ body.video .lightbox {
 #mercado-esperando .card {
   text-align: left;
   background: white;
-  padding: 1.2rem 2rem;
+  padding: 2rem;
   display: flex;
   align-items: center;
   gap: 2rem;
+  margin-inline: 1rem;
 
   background: linear-gradient(var(--color-bg), var(--color-bg)) padding-box,
     linear-gradient(to right, var(--purple), var(--blue)) border-box;
   border-radius: 2rem;
   border-bottom: 0.7rem solid transparent;
+}
+
+#mercado-esperando .card:hover {
+box-shadow: 0 2px 8px rgb(0 0 0 / 12%);
 }
 
 #mercado-esperando .card p {
@@ -788,7 +782,7 @@ body.video .lightbox {
   bottom: 0;
   width: 100%;
   height: 120%;
-  background: url(./assets/backgrounds/seja-influencer-background-mobile.png);
+  background: url(./assets/backgrounds/seja-influencer-background-mobile.jpg);
   background-repeat: no-repeat;
   background-size: 100% 100%;
   z-index: -1;
@@ -830,6 +824,8 @@ body.video .lightbox {
   flex-direction: row;
   align-items: center;
   gap: 2rem;
+  max-width: 40rem;
+  margin: auto;
 }
 
 #seja-influencer .card:nth-child(2) {
@@ -1087,7 +1083,7 @@ body.video .lightbox {
 
 #resultados-alunos {
   position: relative;
-  background: url(./assets/backgrounds/resultados-alunos-mobile-background.png);
+  background: url(./assets/backgrounds/resultados-alunos-mobile-background.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   z-index: 5;
@@ -1477,7 +1473,7 @@ body.video .lightbox {
   left: 0;
   bottom: 0;
   width: 100%;
-  height: 110%;
+  height: 115%;
   z-index: -1; /* vai atrás dos elementos que estão no z: 0 padrão*/
   background: linear-gradient(256.39deg, #580082 3.88%, #121214 96.5%);
 }
@@ -1656,4 +1652,476 @@ footer .wrapper p {
   font-family: var(--font-paragraph);
   color: white;
   font-size: 1.4rem;
+}
+
+/*=============== MEDIA QUERIES ===============*/
+
+/*========== Tablet ==========*/
+@media screen and (min-width: 450px) {
+  #home::before {
+    background-size: 150%;
+  }
+}
+
+@media screen and (min-width: 520px) {
+  #home::before {
+    background-size: 130%;
+  }
+}
+
+@media screen and (min-width: 590px) {
+  #home::before {
+    background-size: 110%;
+  }
+}
+
+@media screen and (min-width: 680px) {
+  #home::before {
+    background-size: 100%;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  #home::before {
+  }
+}
+
+/*========== Desktop ==========*/
+@media screen and (min-width: 1024px) {
+  .wrapper {
+    width: min(112rem, 100%);
+  }
+
+  .button {
+    font-size: 1.6rem;
+  }
+
+  #home {
+    overflow: hidden;
+  }
+
+  #home::before {
+    background: url(./assets/backgrounds/desktop/main-background.jpeg);
+    background-size: cover;
+    background-position: right top;
+    /* transform: translateX(15rem); */
+    width: 115%;
+  }
+
+  #home::after {
+    display: none;
+  }
+
+  #home .square {
+    display: block;
+  }
+
+  #home .wrapper {
+
+  }
+
+  #home .wrapper .play-button {
+    display: block;
+    position: absolute;
+    margin: 0;
+    top: 22rem;
+    right: 10rem;
+    transform: translateX(10rem);
+  }
+
+  #home .wrapper .play-button img {
+    width: 22rem;
+  }
+
+  #home .wrapper .content {
+    width: 42rem;
+    text-align: left;
+    margin-block: auto;
+
+    margin: 5rem 0 5rem 10rem;
+    overflow: visible;
+  }
+
+  #home .wrapper .content .logo {
+    position: static;
+    width: fit-content;
+  }
+
+  #home .wrapper .content .logo img {
+    width: 17rem;
+  }
+
+  #home .wrapper .content h1 {
+    font-size: 3.5rem;
+    margin-top: 3rem;
+  }
+
+  #home .wrapper .content p {
+    font-size: 1.6rem;
+  }
+
+  #home .wrapper .content .button {
+    margin-top: 4rem;
+    padding: 1.8rem 3.5rem;
+  }
+
+  #home .wrapper .content .hotmart-safe {
+    width: fit-content;
+    margin-top: 1.5rem;
+  }
+
+  /*=============== #SEGREDOS-OCULTOS ===============*/
+
+  #segredos-ocultos {
+  }
+
+  #segredos-ocultos .wrapper {
+    overflow: visible;
+    display: grid;
+    grid-template-columns: 50rem 1fr;
+    column-gap: 4rem;
+    grid-template-areas:
+        'A C'
+        'B C';
+  }
+
+  #segredos-ocultos .wrapper .head {
+    width: fit-content;
+    text-align: left;
+  }
+
+  #segredos-ocultos .wrapper .head img {
+    width: 50rem;
+  }
+
+  #segredos-ocultos .wrapper .head h2 {
+    font-size: 3rem;
+  }
+
+  #segredos-ocultos .wrapper .cards {
+    grid-area: C;
+    align-self: center;
+    max-width: 50rem;
+    gap: 7rem;
+  }
+
+  #segredos-ocultos .wrapper .card {
+    
+  }
+
+  #segredos-ocultos .wrapper .card img {
+    width: 6rem;
+    height: auto;
+    min-width: 6rem;
+    min-height: 6rem;
+  }
+
+  #segredos-ocultos .wrapper .card p {
+
+  }
+
+  #segredos-ocultos .wrapper .button {
+    grid-area: B;
+    justify-self: left;
+    margin-top: 2rem;
+    width: 90%;
+  }
+
+  /*=============== #INFLUENCIA-PROFISSAO ===============*/
+
+  #influencia-profissao .wrapper .content {
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+    max-width: 60rem;
+  }
+
+  #influencia-profissao h5 {
+    font-size: 7rem;
+    line-height: 7rem;
+    top: -8rem;
+    overflow: visible;
+  }
+
+  #influencia-profissao h5 span {
+    font-size: 8.9rem;
+  }
+
+  #influencia-profissao .head h2 {
+    font-size: 3.5rem;
+  }
+
+  #influencia-profissao .head p {
+    font-size: 2rem;
+  }
+
+  #influencia-profissao .content .texts-1, #influencia-profissao .content .texts-2 {
+    text-align: left;
+  }
+
+  #influencia-profissao .content .texts-2 {
+    max-width: 25.8rem;
+  }
+
+  #influencia-profissao .wrapper .content .line {
+    width: 1rem;
+    height: 28rem;
+  }
+
+  /*=============== #CELEBRIDADE-DIGITAL ===============*/
+
+  #celebridade-digital .head h2 {
+    font-size: 3.5rem;
+  }
+
+  #celebridade-digital .head p {
+    font-size: 2rem;
+  }
+
+  #celebridade-digital .wrapper .cards {
+    width: fit-content;
+    margin-inline: auto;
+    display: grid;
+    grid-template-columns: 45rem 45rem;
+  }
+
+  #celebridade-digital .wrapper .cards .card {
+    padding: 2.5rem 2.5rem;
+    height: 13rem;
+  }
+
+  /*=============== #MERCADO-ESPERANDO ===============*/
+
+  #mercado-esperando h5 {
+    font-size: 7rem;
+    line-height: 7rem;
+    top: -8rem;
+    overflow: visible;
+  }
+
+  #mercado-esperando h5 span{
+    font-size: 9.2rem;
+  }
+
+  #mercado-esperando .head h2 {
+    font-size: 3.5rem;
+  }
+  
+  #mercado-esperando .head p {
+    font-size: 2rem;
+  }
+
+  #mercado-esperando .wrapper .cards {
+    margin-inline: auto;
+    width: 70rem;
+  } 
+
+  #mercado-esperando .card p {
+    font-size: 1.6rem;
+  }
+
+  /*=============== #SEJA-INFLUENCER ===============*/
+
+  #seja-influencer .wrapper .head h2 {
+    font-size: 4.2rem;
+  }
+
+  #seja-influencer .wrapper .head h3 {
+    font-size: 2rem;
+  }
+
+  #seja-influencer .wrapper .cards {
+    flex-direction: row;
+  }
+
+  #seja-influencer .wrapper .cards .card {
+    flex-direction: column;
+    margin-bottom: 0;
+  }
+
+  #seja-influencer .wrapper .cards .card img {
+    width: 60%;
+    margin-bottom: 2rem;
+  }
+
+  #seja-influencer .wrapper .cards .card p {
+    font-size: 1.6rem;
+  }
+
+  /*=============== #MODULOS ===============*/
+
+  #modulos .wrapper h2 {
+    font-size: 3.5rem;
+  }
+
+
+  #modulos .mySwiper {
+    width: min(90rem, 100%);
+  }
+
+  /*=============== #SOBRE ===============*/
+
+  #sobre .wrapper .picture-texts {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+  }
+
+  #sobre .wrapper .picture-texts .picture img {
+    max-width: 50rem;
+  }
+
+  #sobre .wrapper .picture-texts .texts {
+    margin-top: 16rem;
+    max-width: 45rem;
+    text-align: left;
+  }
+
+  #sobre .wrapper .picture-texts .texts h3 {
+    font-size: 2rem;
+    margin-left: 7rem;
+  }
+
+  #sobre .wrapper .picture-texts .texts h2 {
+    font-size: 4.5rem;
+    margin-bottom: 2rem;
+  }
+
+  #sobre .mySwiper2 {
+    width: fit-content;
+    max-width: 80rem;
+  }
+
+  #sobre .swiper-wrapper .swiper-slide {
+    width: 14rem;
+  }
+
+  /*=============== #RESULTADOS-ALUNOS ===============*/
+
+  #resultados-alunos {
+    display: flex;
+    justify-content: center;
+
+  }
+
+  #resultados-alunos .wrapper {
+    width: fit-content;
+    margin-top: 13rem;
+    margin-inline: auto;
+    margin-right: 0;
+    text-align: left;
+  }
+
+  #resultados-alunos .wrapper .head h2 {
+    font-size: 6rem;
+    width: 30rem;
+  }
+
+  #resultados-alunos .wrapper .head h3 {
+    font-size: 1.8rem;
+    width: 24rem;
+    margin-inline: 0;
+  }
+
+  #resultados-alunos .mySwiper3 {
+    margin-top: 10rem;
+    
+  }
+
+  #resultados-alunos .swiper-wrapper .swiper-slide {
+    height: fit-content;
+  }
+
+  /*=============== #BONUS-EXCLUSIVOS ===============*/
+
+  #bonus-exclusivos h2 {
+    font-size: 3.5rem;
+  }
+
+  #bonus-exclusivos .cards {
+    display: grid;
+    grid-template-columns: 40rem 40rem;
+    justify-content: center;
+  }
+
+  #bonus-exclusivos .card {
+    justify-content: space-between;
+  }
+
+  /*=============== #INVESTIMENTO ===============*/
+
+  #investimento::before {
+    background: none;
+  }
+
+
+  /*=============== #GARANTIA ===============*/
+
+  #garantia .wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5rem;
+  }
+
+  #garantia .wrapper .img-container {
+    margin: 0;
+  }
+
+  #garantia .wrapper .img-container img {
+    width: 30rem;
+  }
+
+  #garantia .wrapper .content {
+    width: 48rem;
+    overflow: visible;
+  }
+
+  #garantia .wrapper .content h3, #garantia .wrapper .content p {
+    text-align: left;
+  }
+
+  #garantia .wrapper .content .button {
+    width: 100%;
+    align-items: center;
+  }
+
+  #garantia .wrapper .content .icons {
+    justify-content: flex-start;
+  }
+
+  /*=============== #FAQ ===============*/
+
+  #faq .wrapper {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+  }
+
+  #faq .wrapper .content {
+    max-width: 65rem;
+  }
+
+  #faq .wrapper h2 {
+    font-size: 4.5rem;
+  }
+
+  faq .wrapper .content h3 {
+    font-size: 2.4rem;
+  }
+
+/*=============== #WPP ===============*/
+
+  .wpp {
+    right: 3rem;
+  }
+
+}
+
+@media screen and (min-width: 1440px) {
+
+  .faixa {
+    transform: rotate(0deg);
+  }
+
 }
